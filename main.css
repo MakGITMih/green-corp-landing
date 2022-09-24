@@ -9,6 +9,10 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 5;
 } 
 .header__logo {
     height: 30px;
@@ -40,6 +44,16 @@ button {
 .about__sun-image {
     width: 100px;
     height: 100px;
+    animation: sun 10s infinite linear;
+    position: absolute
+}
+@keyframes sun {
+    0% {
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
 }
 .about {
     display: flex;
@@ -132,16 +146,13 @@ footer{
     font-weight: 600;
 }
 .footer__container{
-    /* background-color: aquamarine; */
     display: flex;
 }
 .footer__copyright{
     text-align: center;
     opacity: 0.5;
-    /* background-color: aqua; */
 }
 .footer__group{
-    /* display: flex; */
     margin-right: 80px;
 }
 .footer__group h3{
@@ -156,3 +167,74 @@ footer{
 .footer__links a{
     margin-bottom: 15px;
 }
+
+@media (max-width: 1024px) {
+    .about {
+        padding-left: 20px ;
+        padding-right: 20px;
+    }
+    .form{
+        padding-left: 20px ;
+        padding-right: 20px;
+    }
+    .about__images {
+        width: 280;
+    }
+    .about__sun-image{
+        width: 75px;
+        height: 75px;
+    }
+    .about__info h1 {
+        font-size: 36px;
+        line-height: 40px;
+    }  
+}
+@media (max-width: 720px) {
+    .about {
+        padding: 50px 10px 50px 10px;
+        flex-wrap: wrap-reverse;
+    }
+    .form {
+        padding: 50px 10px;
+    }
+    .header__logo {
+        height:20px;
+    }
+    .form__container h1{
+        font-size: 36px;
+        line-height: 40px;
+    }
+    .about__image {
+        width: 280px;
+    }
+    .about__sun-image{
+        width: 75px;
+        height: 75px;
+    } 
+    .about__image {
+        width: 280;
+    }
+    .about__sun-image{
+        width: 75px;
+        height: 75px;
+    }
+    .footer__container {
+        flex-wrap: wrap;
+    } 
+    @keyframes animate__animated {
+        0% {
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
+        }
+    }    
+}
+.animate__animated.animate__bounceInLeft{
+    animation-duration: 2s;
+}
+.animate__animated.animate__bounceInRight{
+    animation-duration: 2s;
+}
+
+
